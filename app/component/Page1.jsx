@@ -12,10 +12,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const orbitron = Orbitron({
   weight: "400",
+  subsets: ["latin"],
 });
 
 const orbit = Orbit({
   weight: "400",
+  subsets: ["latin"],
 });
 
 gsap.registerPlugin(useGSAP);
