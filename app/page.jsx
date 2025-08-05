@@ -1,9 +1,8 @@
 "use client"
 import Page1 from "./component/Page1";
-import Page2 from "./component/page2";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef,useEffect } from "react";
 
 export default function Home() {
   const main = useRef()
@@ -23,13 +22,18 @@ export default function Home() {
     })
   })
 
+  useEffect(() => {
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      // Redirect or block
+      window.location.href = "/No-Mob"; // or show alert, blank screen, etc.
+    }
+  }, []);
+
   return (
     <div ref={main} id="body" className="">
 
         <Page1 />
-
-        {/* <Page2 />
-       */}
     </div>
   );
 }

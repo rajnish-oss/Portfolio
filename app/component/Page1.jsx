@@ -912,7 +912,7 @@ const Page1 = () => {
             /></a>
             <a href="" target="_blank" rel="noopener noreferrer"><img
               className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
-              src="/linkedin.png"
+              src="/linkedIn.png"
               alt=""
             /></a>     
           </ul>
