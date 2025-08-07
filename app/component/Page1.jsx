@@ -328,8 +328,8 @@ const Page1 = () => {
                 <div className="hymCircle border-r-3 border-l-3 border-white/5 rounded-full flex justify-center items-center h-[20rem] w-[20rem]">
                   <img
                     
-                    src="/my1.png"
-                    className="relative h-[15rem] rounded-full"
+                    src="/me1.png"
+                    className="relative h-[15rem]   bottom-3 mask- rounded-full"
                     alt=""
                   />
                 </div>
