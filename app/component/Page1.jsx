@@ -30,6 +30,7 @@ const Page1 = () => {
   const tronBike = useRef();
   const bikeLine = useRef();
   const prLine = useRef();
+  const pr1Line = useRef();
   const exp = useRef();
   const expside = useRef();
   const expbottom = useRef();
@@ -71,13 +72,6 @@ const Page1 = () => {
       },
       "<"
     );
-    gsap.utils.toArray(".hymCircle").forEach((el) => {
-      tl.to(el, {
-        scale: 1.002,
-        repeat: -1,
-        ease: "power1.inOut",
-      });
-    }, "<"),
       tl.to(bikeLine.current, {
         attr: { x1: 0 },
         duration: 3.0,
@@ -87,7 +81,7 @@ const Page1 = () => {
           start: "top 85%",
           end: "top 35%",
           scrub: 1,
-          once: true,
+          
         },
       });
     tl.to(
@@ -101,17 +95,29 @@ const Page1 = () => {
           start: "top 75%",
           end: "top 35%",
           scrub: 1,
-          once: true,
+         
         },
       },
       "<"
     );
     tl.to(prLine.current, {
-      attr: { x2: 700 },
+      attr: { x2: 660 },
       duration: 3.0,
       ease: "power1.inOut",
       scrollTrigger: {
         trigger: prLine.current,
+        start: "top 80%",
+        end: "top 50%",
+        scrub: 1,
+        once: true,
+      },
+    });
+    tl.to(pr1Line.current, {
+      attr: { x1: 20 },
+      duration: 3.0,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: pr1Line.current,
         start: "top 80%",
         end: "top 50%",
         scrub: 1,
@@ -328,8 +334,8 @@ const Page1 = () => {
                 <div className="hymCircle border-r-3 border-l-3 border-white/5 rounded-full flex justify-center items-center h-[20rem] w-[20rem]">
                   <img
                     
-                    src="/me.png"
-                    className="relative h-[19rem]   bottom-7 mask- rounded-full"
+                    src="/m0.png"
+                    className="relative h-[14rem]   bottom-0 mask- rounded-full"
                     alt=""
                   />
                 </div>
@@ -548,21 +554,12 @@ const Page1 = () => {
                 </svg>
               </span>
             </div>
+            
             <div
-              className={`${orbit.className} text-[#7CFFFF] bg-[radial-gradient(circle_at_20rem,_#0F1D22,#00070A_20%,_#010101)]  flex justify-evenly  relative z-9`}
+              className={`${orbit.className} text-[#7CFFFF] bg-[radial-gradient(circle_at_20rem,_#0F1D22,#00070A_20%,_#010101)]  flex justify-evenly items-center gap-[6vw] !ml-[3vw]  relative z-9  `}
             >
-              <div className="h-140 w-200 flex justify-center items-center">
-                <img src="/1P3.png" alt="" className="h-80" />
-                <img
-                  src="/1P1.png"
-                  alt=""
-                  className="h-40 absolute bottom-70 left-87"
-                />
-                <img
-                  src="/1P2.png"
-                  alt=""
-                  className="h-40 relative left-0 top-20"
-                />
+              <div className="">
+                <img className="h-[48vh] rounded-lg" src="/freelive.png" alt="freelive" />
               </div>
               <div className="tl h-140 w-1/2 !p-5 flex flex-col gap-10 items-center justify-center">
                 <div ref={about} className="flex flex-col gap-5">
@@ -604,13 +601,13 @@ const Page1 = () => {
               </div>
             </div>
 
-            <div className="w-full h-10 flex  ">
+             <div className="h-10 w-full ">
               <svg height="40" width="700" xmlns="http://www.w3.org/2000/svg">
                 <line
                   ref={prLine}
                   x1="0"
                   y1="10"
-                  x2="0"
+                  x2="100"
                   y2="10"
                   style={{
                     strokeWidth: "6px",
@@ -622,54 +619,94 @@ const Page1 = () => {
             </div>
 
             <div
-              className={`${orbit.className} text-[#7CFFFF] !p-4 flex justify-evenly gap-20 relative z-20 bg-[radial-gradient(circle_at_70rem,_#0F1D22,#00070A_20%,_#010101)] !my-10`}
+              className={`${orbit.className} text-[#7CFFFF] !p-4 flex  gap-20 relative z-20 bg-[radial-gradient(circle_at_70rem,_#0F1D22,#00070A_20%,_#010101)] items-center !my-[6vw]`}
             >
               <div className="tl h-fit w-1/2 !p-5 flex flex-col gap-5">
-                <div className="">Bo-chat</div>
+                <div className="">MindMaster</div>
                 <div className="">
-                  A real-time chat app with AI-powered custom persona bots that
-                  respond in unique tones and roles — like a travel guide,
-                  coding assistant, or fitness coach. Each chat room can include
-                  a personalized AI companion powered by OpenAI, with dynamic
-                  prompt engineering to maintain consistent behavior. Users can
-                  chat with both humans and bots in real-time, with messages
-                  stored securely and UI built for responsiveness.
+                  MindMaster is a mental discipline app built to help you take control of your mind like a true warrior.
+It challenges you with daily reflection questions, guides you through focused journaling, and then unlocks your hidden patterns with a powerful AI Insight section. The AI becomes your tactical advisor — revealing strengths to sharpen and weaknesses to conquer. Every entry is a step toward mastering your thoughts, forging unshakable focus, and building the inner control that wins battles both in life and within the mind.
                 </div>
                 <div className="flex gap-5">
-                  <Badge className="!px-2 !py-1 rounded-full">MERN</Badge>
-                  <Badge className="!px-2 !py-1 rounded-full">Socket.io</Badge>
-                  <Badge className="!px-2 !py-1 rounded-full">OpenAI</Badge>
+                  <Badge className="!px-2 !py-1 rounded-full">Next.js</Badge>
+                  <Badge className="!px-2 !py-1 rounded-full">prisma</Badge>
+                  <Badge className="!px-2 !py-1 rounded-full">Gemini </Badge>
                 </div>
 
                 <div className="flex gap-5">
                   <button
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
-                    href="https://free-live.vercel.app/"
+                    href="https://mindmaster-swart.vercel.app/"
                     target="_blank" rel="noopener noreferrer"
                   >
                     Live Demo <ImArrowUpRight2 />
                   </button>
                   <button
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
-                    href="https://github.com/rajnish-oss/Chat-app.git"
+                    href="https://github.com/rajnish-oss/mindMaster"
                     target="_blank" rel="noopener noreferrer"
                   >
                     Code <ImArrowUpRight2 />
                   </button>
                 </div>
               </div>
-              <div className="grid grid-cols-2">
-                <img src="/2P3.png" alt="" className="h-40 rounded-2xl" />
-                <img
-                  src="/2P1.png"
-                  alt=""
-                  className="h-40 relative top-30 rounded-[20px_20px_0_0]"
+              <div className="">
+                <img className="h-[48vh] rounded-lg" src="/mindmaster.png" alt="mindmaster" />
+              </div>
+            </div>
+
+             <div className="h-10 w-fit relative left-[24vw] ">
+              <svg height="40" width="700" xmlns="http://www.w3.org/2000/svg">
+                <line
+                  ref={pr1Line}
+                  x1="700"
+                  y1="10"
+                  x2="700"
+                  y2="10"
+                  style={{
+                    strokeWidth: "6px",
+                    stroke: "#7CFFFF",
+                    boxShadow: "#7CFFF",
+                  }}
                 />
-                <img
-                  src="/2P2.png"
-                  alt=""
-                  className="h-40 relative bottom-10 rounded-[0_20px_20px_0]"
-                />
+              </svg>
+            </div>
+
+
+            <div
+              className={`${orbit.className} text-[#7CFFFF] bg-[radial-gradient(circle_at_20rem,_#0F1D22,#00070A_20%,_#010101)] flex items-center justify-evenly gap-[6vw] !ml-[3vw] rounded-lg relative z-9`}
+            >
+              <div >
+                <img src="/bo-chat.png" className="h-[48vh]" alt="bo-chat" />
+              </div>
+              <div className="tl h-140 w-1/2 !p-5 flex flex-col gap-10 items-center justify-center">
+                <div ref={about} className="flex flex-col gap-5">
+                  <div className="">Bo-Chat</div>
+                  <div className="">
+                    A real-time chat app with AI-powered custom persona bots that
+                  respond in unique tones and roles — like a travel guide,
+                  coding assistant, or fitness coach. Each chat room can include
+                  a personalized AI companion powered by OpenAI, with dynamic
+                  prompt engineering to maintain consistent behavior. Users can
+                  chat with both humans and bots in real-time, with messages
+                  stored securely and UI built for responsiveness.
+                  </div>
+                  <div className="flex gap-5">
+                  <Badge className="!px-2 !py-1 rounded-full">MERN</Badge>
+                  <Badge className="!px-2 !py-1 rounded-full">Socket.io</Badge>
+                  <Badge className="!px-2 !py-1 rounded-full">OpenAI</Badge>
+                  </div>
+
+                  <div className="flex gap-5">
+                    <button
+                    className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
+                    href="https://github.com/rajnish-oss/Chat-app.git"
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    Code <ImArrowUpRight2 />
+                  </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -822,7 +859,7 @@ const Page1 = () => {
                   <span className="star"></span>
                   <span>
                     <h1>Aug 2025</h1>
-                    <h6 className={`${orbit.className} text-sm`}>FreeLive</h6>
+                    <h6 className={`${orbit.className} text-sm`}>FreeLive,MindMaster</h6>
                   </span>
                 </div>
               </div>
@@ -910,7 +947,7 @@ const Page1 = () => {
               src="/git.png"
               alt=""
             /></a>
-            <a href="" target="_blank" rel="noopener noreferrer"><img
+            <a href="https://www.linkedin.com/in/rajnish-pandey-9a052b216/" target="_blank" rel="noopener noreferrer"><img
               className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
               src="/linkedIn.png"
               alt=""
