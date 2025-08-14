@@ -335,7 +335,7 @@ const Page1 = () => {
                   <img
                     
                     src="/m0.png"
-                    className="relative h-[14rem]   bottom-0 mask- rounded-full"
+                    className="relative h-[14rem] brightness-150   bottom-0 mask- rounded-full"
                     alt=""
                   />
                 </div>
