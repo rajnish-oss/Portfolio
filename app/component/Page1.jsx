@@ -634,20 +634,20 @@ It challenges you with daily reflection questions, guides you through focused jo
                 </div>
 
                 <div className="flex gap-5">
-                  <button
+                  <a
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
                     href="https://mindmaster-swart.vercel.app/"
                     target="_blank" rel="noopener noreferrer"
                   >
                     Live Demo <ImArrowUpRight2 />
-                  </button>
-                  <button
+                  </a>
+                  <a
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
                     href="https://github.com/rajnish-oss/mindMaster"
                     target="_blank" rel="noopener noreferrer"
                   >
                     Code <ImArrowUpRight2 />
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="">
