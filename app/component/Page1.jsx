@@ -72,18 +72,18 @@ const Page1 = () => {
       },
       "<"
     );
-      tl.to(bikeLine.current, {
-        attr: { x1: 0 },
-        duration: 3.0,
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: bikeLine.current,
-          start: "top 85%",
-          end: "top 35%",
-          scrub: 1,
-          
-        },
-      });
+    tl.to(bikeLine.current, {
+      attr: { x1: 0 },
+      duration: 3.0,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: bikeLine.current,
+        start: "top 85%",
+        end: "top 35%",
+        scrub: 1,
+        once: true,
+      },
+    });
     tl.to(
       tronBike.current,
       {
@@ -95,7 +95,7 @@ const Page1 = () => {
           start: "top 75%",
           end: "top 35%",
           scrub: 1,
-         
+          once: true,
         },
       },
       "<"
@@ -145,7 +145,7 @@ const Page1 = () => {
         scrub: 1,
         start: "top 70%",
         end: "top 50%",
-        
+
         once: true,
       },
     });
@@ -158,7 +158,6 @@ const Page1 = () => {
         start: "top 60%",
         end: "top 50%",
         once: true,
-        
       },
     });
 
@@ -227,8 +226,8 @@ const Page1 = () => {
       });
     }, "<");
 
-    tl.from(about.current,{
-      opacity:0,
+    tl.from(about.current, {
+      opacity: 0,
       scrollTrigger: {
         trigger: about.current,
         start: "top 80%",
@@ -236,7 +235,7 @@ const Page1 = () => {
         scrub: 1,
         once: true,
       },
-    })
+    });
 
     gsap.from(ab.current, {
       x: 25,
@@ -333,9 +332,8 @@ const Page1 = () => {
               <div className="hymCircle border-t-3 border-b-3 border-white/5 rounded-full flex justify-center items-center h-[30rem] w-[30rem]">
                 <div className="hymCircle border-r-3 border-l-3 border-white/5 rounded-full flex justify-center items-center h-[20rem] w-[20rem]">
                   <img
-                    
                     src="/m0.png"
-                    className="relative h-[14rem]   bottom-0 mask- rounded-full"
+                    className="relative h-[14rem] brightness-150   bottom-0 mask- rounded-full"
                     alt=""
                   />
                 </div>
@@ -554,12 +552,16 @@ const Page1 = () => {
                 </svg>
               </span>
             </div>
-            
+
             <div
               className={`${orbit.className} text-[#7CFFFF] bg-[radial-gradient(circle_at_20rem,_#0F1D22,#00070A_20%,_#010101)]  flex justify-evenly items-center gap-[6vw] !ml-[3vw]  relative z-9  `}
             >
               <div className="">
-                <img className="h-[48vh] rounded-lg" src="/freelive.png" alt="freelive" />
+                <img
+                  className="h-[48vh] rounded-lg"
+                  src="/freelive.png"
+                  alt="freelive"
+                />
               </div>
               <div className="tl h-140 w-1/2 !p-5 flex flex-col gap-10 items-center justify-center">
                 <div ref={about} className="flex flex-col gap-5">
@@ -585,14 +587,16 @@ const Page1 = () => {
                     <a
                       className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400 `}
                       href="https://free-live.vercel.app/"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Live Demo <ImArrowUpRight2 />
                     </a>
                     <a
                       className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
                       href="https://github.com/rajnish-oss/FREELive.git"
-                      target="_blank" rel="noopener noreferrer"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Code <ImArrowUpRight2 />
                     </a>
@@ -601,7 +605,7 @@ const Page1 = () => {
               </div>
             </div>
 
-             <div className="h-10 w-full ">
+            <div className="h-10 w-full ">
               <svg height="40" width="700" xmlns="http://www.w3.org/2000/svg">
                 <line
                   ref={prLine}
@@ -624,8 +628,15 @@ const Page1 = () => {
               <div className="tl h-fit w-1/2 !p-5 flex flex-col gap-5">
                 <div className="">MindMaster</div>
                 <div className="">
-                  MindMaster is a mental discipline app built to help you take control of your mind like a true warrior.
-It challenges you with daily reflection questions, guides you through focused journaling, and then unlocks your hidden patterns with a powerful AI Insight section. The AI becomes your tactical advisor — revealing strengths to sharpen and weaknesses to conquer. Every entry is a step toward mastering your thoughts, forging unshakable focus, and building the inner control that wins battles both in life and within the mind.
+                  MindMaster is a mental discipline app built to help you take
+                  control of your mind like a true warrior. It challenges you
+                  with daily reflection questions, guides you through focused
+                  journaling, and then unlocks your hidden patterns with a
+                  powerful AI Insight section. The AI becomes your tactical
+                  advisor — revealing strengths to sharpen and weaknesses to
+                  conquer. Every entry is a step toward mastering your thoughts,
+                  forging unshakable focus, and building the inner control that
+                  wins battles both in life and within the mind.
                 </div>
                 <div className="flex gap-5">
                   <Badge className="!px-2 !py-1 rounded-full">Next.js</Badge>
@@ -634,28 +645,34 @@ It challenges you with daily reflection questions, guides you through focused jo
                 </div>
 
                 <div className="flex gap-5">
-                  <button
+                  <a
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
                     href="https://mindmaster-swart.vercel.app/"
-                    target="_blank" rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Live Demo <ImArrowUpRight2 />
-                  </button>
-                  <button
+                  </a>
+                  <a
                     className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
                     href="https://github.com/rajnish-oss/mindMaster"
-                    target="_blank" rel="noopener noreferrer"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Code <ImArrowUpRight2 />
-                  </button>
+                  </a>
                 </div>
               </div>
               <div className="">
-                <img className="h-[48vh] rounded-lg" src="/mindmaster.png" alt="mindmaster" />
+                <img
+                  className="h-[48vh] rounded-lg"
+                  src="/mindmaster.png"
+                  alt="mindmaster"
+                />
               </div>
             </div>
 
-             <div className="h-10 w-fit relative left-[24vw] ">
+            <div className="h-10 w-fit relative left-[24vw] ">
               <svg height="40" width="700" xmlns="http://www.w3.org/2000/svg">
                 <line
                   ref={pr1Line}
@@ -672,39 +689,42 @@ It challenges you with daily reflection questions, guides you through focused jo
               </svg>
             </div>
 
-
             <div
               className={`${orbit.className} text-[#7CFFFF] bg-[radial-gradient(circle_at_20rem,_#0F1D22,#00070A_20%,_#010101)] flex items-center justify-evenly gap-[6vw] !ml-[3vw] rounded-lg relative z-9`}
             >
-              <div >
+              <div>
                 <img src="/bo-chat.png" className="h-[48vh]" alt="bo-chat" />
               </div>
               <div className="tl h-140 w-1/2 !p-5 flex flex-col gap-10 items-center justify-center">
                 <div ref={about} className="flex flex-col gap-5">
                   <div className="">Bo-Chat</div>
                   <div className="">
-                    A real-time chat app with AI-powered custom persona bots that
-                  respond in unique tones and roles — like a travel guide,
-                  coding assistant, or fitness coach. Each chat room can include
-                  a personalized AI companion powered by OpenAI, with dynamic
-                  prompt engineering to maintain consistent behavior. Users can
-                  chat with both humans and bots in real-time, with messages
-                  stored securely and UI built for responsiveness.
+                    A real-time chat app with AI-powered custom persona bots
+                    that respond in unique tones and roles — like a travel
+                    guide, coding assistant, or fitness coach. Each chat room
+                    can include a personalized AI companion powered by OpenAI,
+                    with dynamic prompt engineering to maintain consistent
+                    behavior. Users can chat with both humans and bots in
+                    real-time, with messages stored securely and UI built for
+                    responsiveness.
                   </div>
                   <div className="flex gap-5">
-                  <Badge className="!px-2 !py-1 rounded-full">MERN</Badge>
-                  <Badge className="!px-2 !py-1 rounded-full">Socket.io</Badge>
-                  <Badge className="!px-2 !py-1 rounded-full">OpenAI</Badge>
+                    <Badge className="!px-2 !py-1 rounded-full">MERN</Badge>
+                    <Badge className="!px-2 !py-1 rounded-full">
+                      Socket.io
+                    </Badge>
+                    <Badge className="!px-2 !py-1 rounded-full">OpenAI</Badge>
                   </div>
 
                   <div className="flex gap-5">
                     <button
-                    className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
-                    href="https://github.com/rajnish-oss/Chat-app.git"
-                    target="_blank" rel="noopener noreferrer"
-                  >
-                    Code <ImArrowUpRight2 />
-                  </button>
+                      className={`${orbitron.className} flex items-center gap-1 border-2 !px-2 !py-1 border-cyan-400 hover:text-red-400 hover:border-red-400`}
+                      href="https://github.com/rajnish-oss/Chat-app.git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Code <ImArrowUpRight2 />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -785,13 +805,12 @@ It challenges you with daily reflection questions, guides you through focused jo
             </div>
 
             <span className="h-200 w-fit flex flex-col items-center ">
-              <div className="flex flex-col absolute right-[102.2rem] top-[77.5rem] w-30">
+              <div className="absolute inset-0 flex items-center justify-center z-10">
                 <svg
-                  height="20"
-                  width="1500"
+                  viewBox="0 0 1500 20"
+                  height="20" width="1500"
+                  className="relative top-[46vh] left-[1.6vw]  rotate-90"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="relative bottom-75 left-67"
-                  style={{ rotate: "90deg" }}
                 >
                   <line
                     ref={tlLine1}
@@ -799,32 +818,21 @@ It challenges you with daily reflection questions, guides you through focused jo
                     y1="0"
                     x2="80"
                     y2="0"
-                    style={{
-                      strokeWidth: "30px",
-                      stroke: "#7CFFFF",
-                    }}
+                    stroke="#7CFFFF"
+                    strokeWidth="30"
                   />
-                </svg>
-                <svg
-                  height="20"
-                  width="890"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="relative bottom-[39rem] left-143.5"
-                  style={{ rotate: "90deg" }}
-                >
                   <line
                     ref={tlLine2}
                     x1="0"
                     y1="0"
                     x2="890"
                     y2="0"
-                    style={{
-                      strokeWidth: "30px",
-                      stroke: "#7cffff3d",
-                    }}
+                    stroke="#7cffff3d"
+                    strokeWidth="30"
                   />
                 </svg>
               </div>
+
               <img
                 ref={ttop}
                 src="/t-top.png"
@@ -859,7 +867,9 @@ It challenges you with daily reflection questions, guides you through focused jo
                   <span className="star"></span>
                   <span>
                     <h1>Aug 2025</h1>
-                    <h6 className={`${orbit.className} text-sm`}>FreeLive,MindMaster</h6>
+                    <h6 className={`${orbit.className} text-sm`}>
+                      FreeLive,MindMaster
+                    </h6>
                   </span>
                 </div>
               </div>
@@ -912,15 +922,18 @@ It challenges you with daily reflection questions, guides you through focused jo
               />
             </svg>
           </span>
-          <span ref={about} className={`${orbit.className} w-4/5 h-fit text-2xl` }>
+          <span
+            ref={about}
+            className={`${orbit.className} w-4/5 h-fit text-2xl`}
+          >
             Hi, I'm Rajnish, a 2nd-year B.Tech Computer Science student. I'm
             passionate about building full-stack web applications that solve
             real problems and create real value. My core tech stack includes
-            React, Next.js, Node.js,Prisma and MongoDB, and I'm constantly exploring
-            better ways to bring ideas to life through code. What drives me is
-            the desire to work on practical, impactful projects — not just code
-            for the sake of coding. I love creating things that people can
-            actually use: apps that are fast, clean, purposeful, and
+            React, Next.js, Node.js,Prisma and MongoDB, and I'm constantly
+            exploring better ways to bring ideas to life through code. What
+            drives me is the desire to work on practical, impactful projects —
+            not just code for the sake of coding. I love creating things that
+            people can actually use: apps that are fast, clean, purposeful, and
             thoughtfully designed. From travel discovery tools to real-time chat
             platforms, every project I take on is an opportunity to solve a
             problem, improve a process, or help someone in a meaningful way. I
@@ -932,26 +945,46 @@ It challenges you with daily reflection questions, guides you through focused jo
           </span>
 
           <ul className="flex gap-2" ref={contact}>
-            <a href="https://www.instagram.com/rajnish_xio/" target="_blank" rel="noopener noreferrer"><img
-              className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
-              src="/insta.png"
-              alt=""
-            /></a>
-            <a href=""><img
-              className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
-              src="/twitter.png"
-              alt=""
-            /></a>
-            <a href="https://github.com/rajnish-oss" target="_blank" rel="noopener noreferrer"><img
-              className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
-              src="/git.png"
-              alt=""
-            /></a>
-            <a href="https://www.linkedin.com/in/rajnish-pandey-9a052b216/" target="_blank" rel="noopener noreferrer"><img
-              className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
-              src="/linkedIn.png"
-              alt=""
-            /></a>     
+            <a
+              href="https://www.instagram.com/rajnish_xio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
+                src="/insta.png"
+                alt=""
+              />
+            </a>
+            <a href="">
+              <img
+                className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
+                src="/twitter.png"
+                alt=""
+              />
+            </a>
+            <a
+              href="https://github.com/rajnish-oss"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
+                src="/git.png"
+                alt=""
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rajnish-pandey-9a052b216/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="cons h-12 hover:shadow-[0_0_10px_#7CFFFF] rounded-full bg-black ease-in"
+                src="/linkedIn.png"
+                alt=""
+              />
+            </a>
           </ul>
         </div>
       </div>
