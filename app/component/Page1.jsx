@@ -295,7 +295,7 @@ const Page1 = () => {
   });
 
   return (
-    <>
+    <div className="flex flex-col justify-center items-center">
       <div
         ref={page1}
         className="h-screen w-full top-0 flex flex-col items-center justify-center absolute z-10 bg-[url(/bg1.jpg)] bg-cover"
