@@ -988,7 +988,7 @@ const Page1 = () => {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
