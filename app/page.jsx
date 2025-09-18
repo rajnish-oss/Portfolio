@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div ref={main} id="body" className="max-w-[1521px] flex justify-center items-center">
+    <div ref={main} id="body" className="max-w-[1521px]">
 
         <Page1 />
     </div>
